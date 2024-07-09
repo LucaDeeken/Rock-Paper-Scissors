@@ -13,3 +13,19 @@ function getComputerChoice () {
 }
 
 getComputerChoice ();
+
+
+function getHumanChoice () {
+    let humanChoice = prompt("Enter your Choice!");
+    if (humanChoice === "Rock" || "ROCK" || "rock") {
+        console.log("Rock")
+    } else if (humanChoice === "Scissor" || "SCISSOR" || "scissor") {
+        console.log ("Scissor");
+    } else if (humanChoice === "Paper" || "PAPER" || "paper") {
+        console. log ("Paper");
+    } else {
+        console.log("I didnt understand you"); getHumanChoice ();
+    }
+}
+
+getHumanChoice ();
