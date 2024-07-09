@@ -1,18 +1,15 @@
-
-let randomNumber = Math.random ();
+let decimalRandomNumber = Math.random ();
 
 
 function getComputerChoice () {
-    let randomNumber2 = randomNumber * 100;
-    if (randomNumber2 <= 33) {
+    let randomNumber = decimalRandomNumber * 100;
+    if (randomNumber <= 33) {
         console.log("Rock");
-    } else if (randomNumber2 <= 66) {
+    } else if (randomNumber <= 66) {
         console.log("Scissor");
-    } else if (randomNumber2 <= 100) {
+    } else if (randomNumber <= 100) {
         console.log ("Paper");
     }
 }
 
 getComputerChoice ();
-// Zufallszahl (a) 
-// if number = =< 33.33, console.log("ROCK"); if number = =< 66.66, Scissor; if number =<100 Paper;
