@@ -1,5 +1,6 @@
 let decimalRandomNumber = Math.random ();
-
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice () {
     let randomNumber = decimalRandomNumber * 100;
@@ -31,3 +32,18 @@ function getHumanChoice () {
 }
 
 getHumanChoice ();
+
+
+
+
+
+function playRound(humanChoice, computerChoice) {
+    // your code here!
+  }
+  
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  
+  playRound(humanSelection, computerSelection);
+  
+
