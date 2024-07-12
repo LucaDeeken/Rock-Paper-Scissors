@@ -1,16 +1,16 @@
-let decimalRandomNumber = Math.random ();
 let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice () {
-    let randomNumber = decimalRandomNumber * 100;
-    if (randomNumber <= 33) {
+    let decimalRandomNumber = Math.random ();
+    let randomNumber = decimalRandomNumber * 1000;
+    if (randomNumber <= 333) {
         console.log("Computer: Rock");
         return "Rock";
-    } else if (randomNumber <= 66) {
+    } else if (randomNumber <= 666) {
         console.log("Computer: Scissor");
         return "Scissor";
-    } else if (randomNumber <= 100) {
+    } else if (randomNumber <= 1000) {
         console.log ("Computer: Paper");
         return "Paper";
     }
@@ -68,16 +68,28 @@ function playGame() {
         } else if (humanSelection === "Scissor" && computerSelection === "Paper") {
         console.log("It's a tie! No points for anyone!");
         }
-        console.log("Computerscore: "+computerScore);
-        console.log("Humanscore: "+humanScore);
     }
     playRound();
 }
 
+
+
+for (let i = 0; i < 5; i++) {
 playGame();
+console.log("Computerscore: "+computerScore);
+console.log("Humanscore: "+humanScore);
+}
 
-
-
+if (humanScore > computerScore) {
+    console.log("You win!");
+    alert("You win!");
+} else if (humanScore < computerScore) {
+    console.log("You lose!");
+    alert("You lose!")
+} else { 
+    console.log("It's a tie!");
+    alert("It's a tie!");
+}
 
 //playRound(humanSelection, computerSelection);
   
