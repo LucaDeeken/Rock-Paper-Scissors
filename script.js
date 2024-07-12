@@ -33,7 +33,6 @@ function getHumanChoice () {
     } else {
         console.log("Wrong input!"); 
         alert("That choice isn't part of the game! :( Do you want to try again? Press F5!");
-        // getHumanChoice ();
     }
 }
 
@@ -89,12 +88,3 @@ if (humanScore > computerScore) {
     console.log("It's a tie!");
     alert("It's a tie!");
 }
-
-//playRound(humanSelection, computerSelection);
-  
-
-//Ganzer Prozess in einer Funktion
-//Speichern des Ergebnisses
-//Funktion wird 5x wiederholt
-//Summieren des Ergebnisses
-//Erklärung des Gewinners
