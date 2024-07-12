@@ -17,14 +17,16 @@ getComputerChoice ();
 
 function getHumanChoice () {
     let humanChoice = prompt("Enter your Choice!");
-    if (humanChoice === "Rock" || "ROCK" || "rock") {
+    if (humanChoice === "Rock" ||humanChoice === "ROCK" ||humanChoice === "rock") {
         console.log("Rock")
-    } else if (humanChoice === "Scissor" || "SCISSOR" || "scissor") {
+    } else if (humanChoice === "Scissor" ||humanChoice === "SCISSOR" ||humanChoice === "scissor") {
         console.log ("Scissor");
-    } else if (humanChoice === "Paper" || "PAPER" || "paper") {
+    } else if (humanChoice === "Paper" ||humanChoice === "PAPER" ||humanChoice === "paper") {
         console. log ("Paper");
     } else {
-        console.log("I didnt understand you"); getHumanChoice ();
+        console.log("Wrong input!"); 
+        alert("That choice isn't part of the game! :( Do you want to try again?");
+        getHumanChoice ();
     }
 }
 
