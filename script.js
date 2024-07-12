@@ -76,15 +76,14 @@ function playGame() {
 
 for (let i = 0; i < 5; i++) {
 playGame();
-console.log("Computerscore: "+computerScore);
-console.log("Humanscore: "+humanScore);
+console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
 }
 
 if (humanScore > computerScore) {
-    console.log("You win!");
+    console.log("You WIN!");
     alert("You win!");
 } else if (humanScore < computerScore) {
-    console.log("You lose!");
+    console.log("You LOSE!");
     alert("You lose!")
 } else { 
     console.log("It's a tie!");
