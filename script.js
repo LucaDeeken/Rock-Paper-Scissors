@@ -21,31 +21,29 @@ const paper = document.querySelector("#Paper");
 const scissor = document.querySelector("#Scissor");
 
 let choicePaper = "";
-let choiceRock = "";
-let choiceScissor = "";
 
 rock.addEventListener("click", () => {
-    choiceRock = "rock";
-    return choiceRock;
+    choicePaper = "rock";
+    playGame ();
 });
 
 paper.addEventListener("click", () => {
     choicePaper = "paper";
-    return choicePaper;
+    playGame ();
 });
 
 scissor.addEventListener("click", () => {
-    choiceScissor = "scissor";
-    return choiceScissor;
+    choicePaper = "scissor";
+    playGame ();
 });
 
 
 
 function getHumanChoice () {
-    if (choiceRock === "rock") {
+    if (choicePaper === "rock") {
         console.log("You: Rock");
         return "Rock";
-    } else if (choiceScissor === "scissor") {
+    } else if (choicePaper === "scissor") {
         console.log ("You: Scissor");
         return "Scissor";
     } else if (choicePaper === "paper") {
@@ -82,7 +80,7 @@ function playGame() {
         } else if (humanSelection === "Scissor" && computerSelection === "Paper") {
         humanScore++;
         console.log("Scissor beats Paper!");
-        } else if (humanSelection === "Scissor" && computerSelection === "Paper") {
+        } else if (humanSelection === "Scissor" && computerSelection === "Scissor") {
         console.log("It's a tie! No points for anyone!");
         }
     }
@@ -91,22 +89,21 @@ function playGame() {
 
 
 
-for (let i = 0; i < 5; i++) {
-//playGame();
-console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
-}
-
-if (humanScore > computerScore) {
-    console.log("You WIN!");
-    alert("You win!");
-} else if (humanScore < computerScore) {
-    console.log("You LOSE!");
-    alert("You lose!")
-} else { 
-    console.log("It's a tie!");
-    alert("It's a tie!");
-}
-
-
+function loop () {
+    for (let i = 0; i < 5; i++) {
+    playGame();
+    console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
+    }
+    if (humanScore > computerScore) {
+        console.log("You WIN!");
+        alert("You win!");
+    } else if (humanScore < computerScore) {
+        console.log("You LOSE!");
+        alert("You lose!")
+    } else { 
+        console.log("It's a tie!");
+        alert("It's a tie!");
+    }
+    }
 //Wenn auf Button geklickt wird Funktion humanChoice
 // gethumanChoice muss in drei aufgespalten werden
