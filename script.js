@@ -16,24 +16,42 @@ function getComputerChoice () {
     }
 }
 
+const rock = document.querySelector("#Rock");
+const paper = document.querySelector("#Paper");
+const scissor = document.querySelector("#Scissor");
+
+let choicePaper = "";
+let choiceRock = "";
+let choiceScissor = "";
+
+rock.addEventListener("click", () => {
+    choiceRock = "rock";
+    return choiceRock;
+});
+
+paper.addEventListener("click", () => {
+    choicePaper = "paper";
+    return choicePaper;
+});
+
+scissor.addEventListener("click", () => {
+    choiceScissor = "scissor";
+    return choiceScissor;
+});
 
 
 
 function getHumanChoice () {
-    let humanChoice = prompt("Enter your Choice!");
-    if (humanChoice === "Rock" ||humanChoice === "ROCK" ||humanChoice === "rock") {
+    if (choiceRock === "rock") {
         console.log("You: Rock");
         return "Rock";
-    } else if (humanChoice === "Scissor" ||humanChoice === "SCISSOR" ||humanChoice === "scissor") {
+    } else if (choiceScissor === "scissor") {
         console.log ("You: Scissor");
         return "Scissor";
-    } else if (humanChoice === "Paper" ||humanChoice === "PAPER" ||humanChoice === "paper") {
+    } else if (choicePaper === "paper") {
         console. log ("You: Paper");
         return "Paper";
-    } else {
-        console.log("Wrong input!"); 
-        alert("That choice isn't part of the game! :( Do you want to try again? Press F5!");
-    }
+    } 
 }
 
 
@@ -74,7 +92,7 @@ function playGame() {
 
 
 for (let i = 0; i < 5; i++) {
-playGame();
+//playGame();
 console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
 }
 
@@ -88,3 +106,7 @@ if (humanScore > computerScore) {
     console.log("It's a tie!");
     alert("It's a tie!");
 }
+
+
+//Wenn auf Button geklickt wird Funktion humanChoice
+// gethumanChoice muss in drei aufgespalten werden
