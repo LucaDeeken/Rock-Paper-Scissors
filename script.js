@@ -1,17 +1,34 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const div = document.querySelector("div");
+
+const resultsComputer = document.createElement("span");
+div.appendChild(resultsComputer);
+
+const resultsHuman = document.createElement("span");
+div.appendChild(resultsHuman);
+
+const results = document.createElement("span");
+div.appendChild(results);
+
+const pointsResults = document.createElement("span");
+div.appendChild(pointsResults);
+
+const winnerText = document.createElement("span");
+div.appendChild(winnerText);
+
 function getComputerChoice () {
     let decimalRandomNumber = Math.random ();
     let randomNumber = decimalRandomNumber * 1000;
     if (randomNumber <= 333) {
-        console.log("Computer: Rock");
+        resultsComputer.textContent = "Computer: Rock";
         return "Rock";
     } else if (randomNumber <= 666) {
-        console.log("Computer: Scissor");
+        resultsComputer.textContent = "Computer: Scissor";
         return "Scissor";
     } else if (randomNumber <= 1000) {
-        console.log ("Computer: Paper");
+        resultsComputer.textContent = "Computer: Paper";
         return "Paper";
     }
 }
@@ -22,32 +39,42 @@ const scissor = document.querySelector("#Scissor");
 
 let choicePaper = "";
 
-rock.addEventListener("click", () => {
+
+
+function rockClick () {
     choicePaper = "rock";
     playGame ();
-});
+}
 
-paper.addEventListener("click", () => {
+rock.addEventListener ("click", rockClick);
+
+function paperClick () {
     choicePaper = "paper";
     playGame ();
-});
+}
 
-scissor.addEventListener("click", () => {
+paper.addEventListener("click", paperClick);
+
+function scissorClick () {
     choicePaper = "scissor";
     playGame ();
-});
+}
+
+scissor.addEventListener("click", scissorClick);
+
+
 
 
 
 function getHumanChoice () {
     if (choicePaper === "rock") {
-        console.log("You: Rock");
+        resultsHuman.textContent = "You: Rock";
         return "Rock";
     } else if (choicePaper === "scissor") {
-        console.log ("You: Scissor");
+        resultsHuman.textContent = "You: Scissor";
         return "Scissor";
     } else if (choicePaper === "paper") {
-        console. log ("You: Paper");
+        resultsHuman.textContent = "You: Paper";
         return "Paper";
     } 
 }
@@ -60,50 +87,69 @@ function playGame() {
         const computerSelection = getComputerChoice();
         if (humanSelection === "Rock" && computerSelection === "Paper") {
         computerScore++;
-        console.log("Paper beats Rock!");
+        results.textContent = "Paper beats Rock!";
         } else if (humanSelection === "Rock" && computerSelection === "Scissor") {
         humanScore++;
-        console.log("Rock beats Scissor!");
+        results.textContent = "Rock beats Scissor!";
         } else if (humanSelection === "Rock" && computerSelection === "Rock") {
-        console.log("It's a tie! No points for anyone!")
+        results.textContent = "It's a tie! No points for anyone!";
         } else if (humanSelection === "Paper" && computerSelection === "Scissor") {
         computerScore++;
-        console.log("Scissor beats Paper!");
+        results.textContent = "Scissor beats Paper!";
         } else if (humanSelection === "Paper" && computerSelection === "Rock") {
         humanScore++;
-        console.log("Paper beats Rock!");
+        results.textContent = "Paper beats Rock!";
         } else if (humanSelection === "Paper" && computerSelection === "Paper") {
-        console.log("It's a tie! No points for anyone!");
+        results.textContent = "It's a tie! No points for anyone!";
         } else if (humanSelection === "Scissor" && computerSelection === "Rock") {
         computerScore++;
-        console.log("Rock beats Scissor!");
+        results.textContent = "Rock beats Scissor!";
         } else if (humanSelection === "Scissor" && computerSelection === "Paper") {
         humanScore++;
-        console.log("Scissor beats Paper!");
+        results.textContent = "Scissor beats Paper!";
         } else if (humanSelection === "Scissor" && computerSelection === "Scissor") {
-        console.log("It's a tie! No points for anyone!");
+        results.textContent = "It's a tie! No points for anyone!";
         }
+        pointsResults.textContent = "Computer: "+computerScore + " --- Your Score: "+humanScore
     }
     playRound();
+    if (humanScore === 5) {
+        winnerText.textContent = "You WIN!";
+        rock.removeEventListener("click", rockClick);
+        paper.removeEventListener("click", paperClick);
+        scissor.removeEventListener("click", scissorClick);
+    } else if (computerScore === 5) {
+        winnerText.textContent = "You LOSE!";
+        rock.removeEventListener("click", rockClick);
+        paper.removeEventListener("click", paperClick);
+        scissor.removeEventListener("click", scissorClick);
+    }
 }
 
 
 
-function loop () {
-    for (let i = 0; i < 5; i++) {
-    playGame();
-    console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
-    }
-    if (humanScore > computerScore) {
-        console.log("You WIN!");
-        alert("You win!");
-    } else if (humanScore < computerScore) {
-        console.log("You LOSE!");
-        alert("You lose!")
-    } else { 
-        console.log("It's a tie!");
-        alert("It's a tie!");
-    }
-    }
-//Wenn auf Button geklickt wird Funktion humanChoice
-// gethumanChoice muss in drei aufgespalten werden
+if (humanScore === 5) {
+    winnerText.textContent = "You WIN!";
+} else if (computerScore === 5) {
+    winnerText.textContent = "You LOSE!";
+}
+
+
+// function loop () {
+//    for (let i = 0; i < 5; i++) {
+//    playGame();
+//    console.log("Computer: "+computerScore + " --- Your Score: "+humanScore);
+//    }
+//    if (humanScore > computerScore) {
+//        console.log("You WIN!");
+//        alert("You win!");
+//    } else if (humanScore < computerScore) {
+//        console.log("You LOSE!");
+//        alert("You lose!")
+//    } else { 
+//        console.log("It's a tie!");
+//        alert("It's a tie!");
+//    }
+//    }
+//
+// ursprüngliche Loop Funktion
