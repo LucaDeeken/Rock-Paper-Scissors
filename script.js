@@ -23,6 +23,8 @@ const finalWinnerText = document.getElementById("finalWinnerText");
 const winnerText = document.createElement("span");
 finalWinnerText.appendChild(winnerText);
 
+const bestOfFive = document.getElementById("bestOfFive");
+
 resultsHuman.classList.add("new");
 resultsComputer.classList.add("new");
 results.classList.add("new");
@@ -108,6 +110,7 @@ function playGame() {
     function playRound() {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
+        bestOfFive.textContent = "";
         if (humanSelection === "Rock" && computerSelection === "Paper") {
         computerScore++;
         results.textContent = "Paper beats Rock!";

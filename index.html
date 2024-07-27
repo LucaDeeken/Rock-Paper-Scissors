@@ -20,7 +20,7 @@
                 display: flex;
                 flex-direction: row;
                 margin-top: 100px;
-                margin-bottom: 100px;
+                margin-bottom: 0px;
             }
 
             #Reset {
@@ -29,10 +29,12 @@
             font-size: 50px;
             font-weight: bold;
             border: 7px solid black;
+            border-radius: 10px;
             }
 
             .box1, .box2, .box3 {
                 margin: 100px;
+                margin-bottom: 10px;
                 display: flex;
                 flex-direction: column;
             }
@@ -48,10 +50,15 @@
             font-size: 50px;
             font-weight: bold;
             border: 7px solid black;
+            border-radius: 10px;
             }
 
             #Rock:hover, #Paper:hover, #Scissor:hover {
                 background-color: #45a049;
+            }
+
+            #Reset:hover {
+                background-color: red;
             }
             .new {
                 font-size: 50px;
@@ -59,10 +66,16 @@
             }
 
             #scoresText, #winner, #scores, #finalWinnerText {
-                margin: 20px;
+                margin: 10px;
+                font-size: 100px;
             }
 
             #winner, #finalWinnerText {
+                font-weight: bold;
+            }
+
+            #bestOfFive {
+                font-size: 80px;
                 font-weight: bold;
             }
         </style>
@@ -83,6 +96,7 @@
             <button id="Scissor">Scissor</button>
         </div>
     </div>
+    <p id="bestOfFive">Best of Five!</p>
     <p id="scoresText"></p>
     <span id="winner"></span>
     <p id="scores"></p>
