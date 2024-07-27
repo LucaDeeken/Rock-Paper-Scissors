@@ -36,6 +36,7 @@ function getComputerChoice () {
 const rock = document.querySelector("#Rock");
 const paper = document.querySelector("#Paper");
 const scissor = document.querySelector("#Scissor");
+const reset = document.querySelector("#Reset");
 
 let choicePaper = "";
 
@@ -62,6 +63,17 @@ function scissorClick () {
 
 scissor.addEventListener("click", scissorClick);
 
+
+function resetClick () {
+    humanScore = 0;
+    computerScore = 0;
+    pointsResults.textContent = "Computer: "+computerScore + " --- Your Score: "+humanScore;
+    winnerText.textContent = "";
+    rock.addEventListener ("click", rockClick);
+    paper.addEventListener("click", paperClick);
+    scissor.addEventListener("click", scissorClick);
+}
+reset.addEventListener("click", resetClick);
 
 
 
@@ -110,7 +122,7 @@ function playGame() {
         } else if (humanSelection === "Scissor" && computerSelection === "Scissor") {
         results.textContent = "It's a tie! No points for anyone!";
         }
-        pointsResults.textContent = "Computer: "+computerScore + " --- Your Score: "+humanScore
+        pointsResults.textContent = "Computer: "+computerScore + " --- Your Score: "+humanScore;
     }
     playRound();
     if (humanScore === 5) {
@@ -128,11 +140,6 @@ function playGame() {
 
 
 
-if (humanScore === 5) {
-    winnerText.textContent = "You WIN!";
-} else if (computerScore === 5) {
-    winnerText.textContent = "You LOSE!";
-}
 
 
 // function loop () {
