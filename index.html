@@ -2,15 +2,88 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Scissors</title>
+        <title>Rock-Paper-Scissors</title>
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .title {
+                font-size: 80px;
+                margin-top: 100px;
+                font-weight: bold;
+
+            }
+            #buttons {
+                display: flex;
+                flex-direction: row;
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+
+            #Reset {
+                padding: 20px;
+            margin: 100px;
+            font-size: 50px;
+            font-weight: bold;
+            border: 7px solid black;
+            }
+
+            .box1, .box2, .box3 {
+                margin: 100px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            img {
+                border: 5px solid black;
+                margin-bottom: 50px;
+            }
+
+            #Rock, #Paper, #Scissor {
+            padding: 20px;
+            margin: 100px;
+            font-size: 50px;
+            font-weight: bold;
+            border: 7px solid black;
+            }
+
+            .new {
+                font-size: 50px;
+                padding: 0px;
+            }
+
+            #scoresText, #winner, #scores, #finalWinnerText {
+                margin: 20px;
+            }
+
+            #winner, #finalWinnerText {
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
-
+    <div class="title">Rock-Paper-Scissor!</div>
     <div id="buttons">
-    <button id="Rock">Rock</button>
-    <button id="Paper">Paper</button>
-    <button id="Scissor">Scissor</button>
+        <div class="box1">
+            <img src="./images/Rock.jpeg" alt="a rock in pixelart" height="500px" width="auto"> 
+            <button id="Rock">Rock</button>
+        </div>
+        <div class="box2">
+            <img src="./images/Paper.jpeg" alt="a paper in pixelart" height="500px" width="auto">
+            <button id="Paper">Paper</button>
+        </div>
+        <div class="box3">
+            <img src="./images/Scissor.jpeg" alt="a scissor in pixelart" height="500px" width="auto">
+            <button id="Scissor">Scissor</button>
+        </div>
     </div>
+    <p id="scoresText"></p>
+    <span id="winner"></span>
+    <p id="scores"></p>
+    <p id="finalWinnerText"></p>
     <button id="Reset">Reset</button>
 
 
