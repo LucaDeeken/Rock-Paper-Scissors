@@ -1,34 +1,45 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const div = document.querySelector("div");
+const scoresText = document.getElementById("scoresText");
 
 const resultsComputer = document.createElement("span");
-div.appendChild(resultsComputer);
+scoresText.appendChild(resultsComputer);
 
 const resultsHuman = document.createElement("span");
-div.appendChild(resultsHuman);
+scoresText.appendChild(resultsHuman);
+
+const whoWins = document.getElementById("winner");
 
 const results = document.createElement("span");
-div.appendChild(results);
+whoWins.appendChild(results);
+
+const scores = document.getElementById("scores");
 
 const pointsResults = document.createElement("span");
-div.appendChild(pointsResults);
+scores.appendChild(pointsResults);
 
+const finalWinnerText = document.getElementById("finalWinnerText");
 const winnerText = document.createElement("span");
-div.appendChild(winnerText);
+finalWinnerText.appendChild(winnerText);
+
+resultsHuman.classList.add("new");
+resultsComputer.classList.add("new");
+results.classList.add("new");
+pointsResults.classList.add("new");
+winnerText.classList.add("new");
 
 function getComputerChoice () {
     let decimalRandomNumber = Math.random ();
     let randomNumber = decimalRandomNumber * 1000;
     if (randomNumber <= 333) {
-        resultsComputer.textContent = "Computer: Rock";
+        resultsComputer.textContent = "Computer: Rock ---";
         return "Rock";
     } else if (randomNumber <= 666) {
-        resultsComputer.textContent = "Computer: Scissor";
+        resultsComputer.textContent = "Computer: Scissor ---";
         return "Scissor";
     } else if (randomNumber <= 1000) {
-        resultsComputer.textContent = "Computer: Paper";
+        resultsComputer.textContent = "Computer: Paper ---";
         return "Paper";
     }
 }
@@ -80,13 +91,13 @@ reset.addEventListener("click", resetClick);
 
 function getHumanChoice () {
     if (choicePaper === "rock") {
-        resultsHuman.textContent = "You: Rock";
+        resultsHuman.textContent = " You: Rock";
         return "Rock";
     } else if (choicePaper === "scissor") {
-        resultsHuman.textContent = "You: Scissor";
+        resultsHuman.textContent = " You: Scissor";
         return "Scissor";
     } else if (choicePaper === "paper") {
-        resultsHuman.textContent = "You: Paper";
+        resultsHuman.textContent = " You: Paper";
         return "Paper";
     } 
 }
